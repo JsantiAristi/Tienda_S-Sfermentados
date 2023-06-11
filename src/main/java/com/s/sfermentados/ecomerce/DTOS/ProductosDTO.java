@@ -2,6 +2,10 @@ package com.s.sfermentados.ecomerce.DTOS;
 
 import com.s.sfermentados.ecomerce.Models.Productos;
 
+import java.util.Set;
+
+import static java.util.stream.Collectors.toSet;
+
 public class ProductosDTO {
     private long id;
     private int stock;
@@ -12,6 +16,7 @@ public class ProductosDTO {
     private int contenido;
     private String descripcion;
     private String nombre;
+    private Set<ProductoSeleccionadoDTO> productoSeleccionados;
 
     public ProductosDTO(Productos productos) {
         this.id = productos.getId();
@@ -23,6 +28,7 @@ public class ProductosDTO {
         this.contenido = productos.getContenido();
         this.descripcion = productos.getDescripcion();
         this.nombre = productos.getNombre();
+        this.productoSeleccionados = productos.getProductoSeleccionados().stream().map(ProductoSeleccionadoDTO::new).collect(toSet());
     }
 
     public long getId() {return id;}
@@ -34,4 +40,5 @@ public class ProductosDTO {
     public int getContenido() {return contenido;}
     public String getDescripcion() {return descripcion;}
     public String getNombre() {return nombre;}
+    public Set<ProductoSeleccionadoDTO> getProductoSeleccionados() {return productoSeleccionados;}
 }

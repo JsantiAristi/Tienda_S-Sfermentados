@@ -2,10 +2,9 @@ package com.s.sfermentados.ecomerce.Models;
 
 import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Productos {
@@ -21,6 +20,8 @@ public class Productos {
     private int contenido;
     private String descripcion;
     private String nombre;
+    @OneToMany(mappedBy="productos", fetch= FetchType.EAGER)
+    private Set<ProductoSeleccionado> productoSeleccionados = new HashSet<>();
 
     public Productos() {
     }
@@ -36,6 +37,8 @@ public class Productos {
         this.nombre = nombre;
     }
 
+
+    // Get
     public long getId() {return id;}
     public int getStock() {return stock;}
     public double getPrecio() {return precio;}
@@ -45,7 +48,9 @@ public class Productos {
     public int getContenido() {return contenido;}
     public String getDescripcion() {return descripcion;}
     public String getNombre() {return nombre;}
+    public Set<ProductoSeleccionado> getProductoSeleccionados() {return productoSeleccionados;}
 
+    // Set
     public void setStock(int stock) {this.stock = stock;}
     public void setPrecio(double precio) {this.precio = precio;}
     public void setFoto(String foto) {this.foto = foto;}
@@ -54,4 +59,5 @@ public class Productos {
     public void setContenido(int contenido) {this.contenido = contenido;}
     public void setDescripcion(String descripcion) {this.descripcion = descripcion;}
     public void setNombre(String nombre) {this.nombre = nombre;}
+    public void setProductoSeleccionados(Set<ProductoSeleccionado> productoSeleccionados) {this.productoSeleccionados = productoSeleccionados;}
 }
