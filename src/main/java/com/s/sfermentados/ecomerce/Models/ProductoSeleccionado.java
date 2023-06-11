@@ -18,8 +18,8 @@ public class ProductoSeleccionado {
     @JoinColumn(name = "ordenId")
     private Orden orden;
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "productosId")
-    private Productos productos;
+    @JoinColumn(name = "productoId")
+    private Producto producto;
 
     public ProductoSeleccionado() {
     }
@@ -38,7 +38,7 @@ public class ProductoSeleccionado {
     public double getPrecio() {return precio;}
     public int getDescuento() {return descuento;}
     public Orden getOrden() {return orden;}
-    public Productos getProductos() {return productos;}
+    public Producto getProductos() {return producto;}
 
     // Set
     public void setCantidad(int cantidad) {this.cantidad = cantidad;}
@@ -46,5 +46,5 @@ public class ProductoSeleccionado {
     public void setPrecio(double precio) {this.precio = precio;}
     public void setDescuento(int descuento) {this.descuento = descuento;}
     public void setOrden(Orden orden) {this.orden = orden;}
-    public void setProductos(Productos productos) {this.productos = productos;}
+    public void setProductos(Producto producto) {this.producto = producto;}
 }

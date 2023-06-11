@@ -7,7 +7,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-public class Productos {
+public class Producto {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
     @GenericGenerator(name = "native", strategy = "native")
@@ -20,13 +20,13 @@ public class Productos {
     private int contenido;
     private String descripcion;
     private String nombre;
-    @OneToMany(mappedBy="productos", fetch= FetchType.EAGER)
+    @OneToMany(mappedBy="producto", fetch= FetchType.EAGER)
     private Set<ProductoSeleccionado> productoSeleccionados = new HashSet<>();
 
-    public Productos() {
+    public Producto() {
     }
 
-    public Productos(int stock, double precio, String foto, double abv, String dulzor, int contenido, String descripcion, String nombre) {
+    public Producto(int stock, double precio, String foto, double abv, String dulzor, int contenido, String descripcion, String nombre) {
         this.stock = stock;
         this.precio = precio;
         this.foto = foto;

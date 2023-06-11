@@ -1,12 +1,12 @@
 package com.s.sfermentados.ecomerce.DTOS;
 
-import com.s.sfermentados.ecomerce.Models.Productos;
+import com.s.sfermentados.ecomerce.Models.Producto;
 
 import java.util.Set;
 
 import static java.util.stream.Collectors.toSet;
 
-public class ProductosDTO {
+public class ProductoDTO {
     private long id;
     private int stock;
     private double precio;
@@ -18,17 +18,17 @@ public class ProductosDTO {
     private String nombre;
     private Set<ProductoSeleccionadoDTO> productoSeleccionados;
 
-    public ProductosDTO(Productos productos) {
-        this.id = productos.getId();
-        this.stock = productos.getStock();
-        this.precio = productos.getPrecio();
-        this.foto = productos.getFoto();
-        this.abv = productos.getAbv();
-        this.dulzor = productos.getDulzor();
-        this.contenido = productos.getContenido();
-        this.descripcion = productos.getDescripcion();
-        this.nombre = productos.getNombre();
-        this.productoSeleccionados = productos.getProductoSeleccionados().stream().map(ProductoSeleccionadoDTO::new).collect(toSet());
+    public ProductoDTO(Producto producto) {
+        this.id = producto.getId();
+        this.stock = producto.getStock();
+        this.precio = producto.getPrecio();
+        this.foto = producto.getFoto();
+        this.abv = producto.getAbv();
+        this.dulzor = producto.getDulzor();
+        this.contenido = producto.getContenido();
+        this.descripcion = producto.getDescripcion();
+        this.nombre = producto.getNombre();
+        this.productoSeleccionados = producto.getProductoSeleccionados().stream().map(ProductoSeleccionadoDTO::new).collect(toSet());
     }
 
     public long getId() {return id;}
