@@ -17,10 +17,50 @@
 }
 
 .header-abajo a img{
-    width: 8rem;
+    width: 7rem;
     object-fit: cover;
 }
 
 .header-abajo ul{
     list-style-type: none;
+}
+
+.offcanvas.offcanvas-end{
+    left: 0 !important;
+    transform: translateX(-100%);
+}
+
+/*Main*/
+.productos{
+    height: 50vh;
+}
+
+.imagen-estatica{
+    background-image: linear-gradient(to bottom right, #02020265, #02020254), url(../../imagenes/copacabana.jpg);
+    background-size: cover;
+    background-position: bottom;
+    background-attachment: fixed;
+    min-height: 50vh;
+}
+
+.informacion-iconos{
+    min-height: 50vh;
+    border-bottom: 1px solid gray;
+}
+
+.informacion-iconos div{
+    width: 20rem;
+    transition: all .2s ease-in-out;
+}
+
+.informacion-iconos i{
+    font-size: 5rem;
+}
+
+.informacion-iconos i:hover{
+    transform: translateY(-8px);
+}
+
+.informacion-iconos p{
+    height: 5rem;
 }
