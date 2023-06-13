@@ -1,10 +1,108 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>S&S FERMENTADOS | INICIO</title>
+    <link rel="shortcut icon" href="./imagenes/logo-oso-pequeño.png" type="image/x-icon">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./web/estilos/index.css">
 </head>
-<body>
 
+<body>
+    <header class="d-flex flex-column">
+        <div class="header-arriba">
+            <h5 class="text-center text-white p-1 mb-0 bg-header">Tómatela como un oso fella</h5>
+        </div>
+        <div class="header-abajo">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <a class="navbar-brand ps-5" href="#"><img src="./imagenes/logo-negro-removebg-preview.png" alt=""></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar"
+                        aria-label="Toggle navigation">
+                        <i class="bi bi-chevron-double-right text-white"></i>
+                    </button>
+                    <div class="offcanvas offcanvas-end bg-dark" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title text-white" id="offcanvasNavbarLabel">S&S FERMENTADOS</h5>
+                            <a data-bs-dismiss="offcanvas" aria-label="Close"><i class="bi bi-x-square-fill text-white fs-5"></i></a>
+                        </div>
+                        <div class="offcanvas-body">
+                            <ul class="navbar-nav nav-underline ms-auto me-auto mb-2 mb-lg-0 gap-3">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle text-white fs-5" href="#" role="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        Categorias
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Vinos</a></li>
+                                        <li><a class="dropdown-item" href="#">Macerados</a></li>
+                                        <li><a class="dropdown-item" href="#">Cervezas</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" href="#">Licores mensuales</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle text-white fs-5" href="#" role="button" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        Páginas
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Sobre Nosotros</a></li>
+                                        <li><a class="dropdown-item" href="#">Preguntas Frecuentes</a></li>
+                                        <li><a class="dropdown-item" href="#">Políticas de Privacidad</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-white fs-5" aria-current="page" href="#">Contáctanos</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-white fs-5" aria-current="page" href="#">Blog</a>
+                                </li>
+                            </ul>                       
+                            <ul class="d-flex align-items-center mb-2 mb-lg-0 ps-0 gap-3">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle text-white fs-5" href="#" role="button" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        Mi cuenta
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Log In</a></li>
+                                        <li><a class="dropdown-item" href="#">Favoritos</a></li>
+                                        <li><a class="dropdown-item" href="#">Mis pedidos</a></li>
+                                        <li><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-white fs-5" aria-current="page" href="#">|</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-white fs-5" aria-current="page" href="#"><i class="bi bi-search-heart"></i></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-white fs-5" aria-current="page" href="#"><i class="bi bi-basket2"></i></a>
+                                </li>
+                            </ul>
+                        </div>                      
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+    crossorigin="anonymous"></script>
+    <script src="./web/js/index.js"></script>
 </body>
+
 </html>
