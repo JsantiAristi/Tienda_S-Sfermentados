@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.bg-header{
+    background-color: #7D5A50;
+    height: 5vh;
+}
+
+.header-abajo{
+    background-image: linear-gradient(to bottom right, #020202d7, #02020254), url(../../imagenes/fondo-header.jpg);
+    height: 95vh;
+    background-size: cover;
+    background-position: bottom;
+}
+
+.header-abajo a img{
+    width: 8rem;
+    object-fit: cover;
+}
+
+.header-abajo ul{
+    list-style-type: none;
+}
