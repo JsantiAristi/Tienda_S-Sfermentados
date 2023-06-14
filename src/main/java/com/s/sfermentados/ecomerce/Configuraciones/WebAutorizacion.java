@@ -22,11 +22,11 @@ public class WebAutorizacion  {
 
         http.cors().and().authorizeRequests()
 
-                .antMatchers(HttpMethod.POST,"/api/login", "/api/logout").permitAll()
+                .antMatchers(HttpMethod.POST,"/api/login", "/api/logout", "/api/clientes").permitAll()
                 // HTML JS CSS PERMIT ALL
                 .antMatchers("/api/producto",
                         "/api/clientes",
-                       "/static/**").permitAll();
+                       "/static/**", "/api/clientes/actual").permitAll();
 
 
 

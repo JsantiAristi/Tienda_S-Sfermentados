@@ -3,14 +3,13 @@ package com.s.sfermentados.ecomerce.Controladores;
 import com.s.sfermentados.ecomerce.DTOS.ClienteDTO;
 import com.s.sfermentados.ecomerce.Models.Cliente;
 import com.s.sfermentados.ecomerce.Repositorios.ClienteRepositorio;
+import com.s.sfermentados.ecomerce.Servicios.ClienteServicio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.mail.MessagingException;
 import java.util.List;
@@ -23,11 +22,18 @@ public class ClienteControlador {
     @Autowired
     private ClienteRepositorio clienteRepositorio;
     @Autowired
+    private ClienteServicio clienteServicio;
+    @Autowired
     private PasswordEncoder passwordEncoder;
 
     @GetMapping("/api/clientes")
     public List<ClienteDTO> obtenerClientes() {
         return clienteRepositorio.findAll().stream().map(ClienteDTO::new).collect(toList());
+    }
+    @GetMapping("/api/clientes/actual")
+    public  ResponseEntity<Object> obtenerClienteActual(Authentication authentication){
+        Cliente clienteAutenticado = clienteServicio.obtenerClienteAutenticado(authentication);
+        return new ResponseEntity<>(new ClienteDTO(clienteAutenticado), HttpStatus.ACCEPTED);
     }
 
     @PostMapping("/api/clientes")
@@ -75,7 +81,7 @@ public class ClienteControlador {
         }
 
         Cliente nuevoCliente = new Cliente(nombre, apellido, nickName, correo, telefono, passwordEncoder.encode(contraseña));
-        clienteRepositorio.save(nuevoCliente);
+        clienteServicio.guardarCliente(nuevoCliente);
 
         return new ResponseEntity<>("Se ha registrado exitosamente", HttpStatus.CREATED);
     }
