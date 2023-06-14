@@ -64,3 +64,16 @@
 .informacion-iconos p{
     height: 5rem;
 }
+
+/*Footer*/
+footer{
+    min-height: 50vh;
+}
+
+.imagen-footer, .informacion-compañia, .informacion-contacto{
+    width: 15rem;
+}
+
+.imagen-footer img{
+    width: 5rem;
+}
