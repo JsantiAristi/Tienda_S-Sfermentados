@@ -12,118 +12,193 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous" />
     <link rel="stylesheet" href="./web/estilos/index.css">
+	<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 
 <body>
-    <header class="d-flex flex-column">
-        <div class="header-arriba">
-            <h5 class="text-center text-white p-1 mb-0 bg-header">Tómatela como un oso fella</h5>
-        </div>
-        <div class="header-abajo">
-            <nav class="navbar navbar-expand-lg">
-                <div class="container-fluid">
-                    <a class="navbar-brand ps-5" href="#"><img src="./imagenes/logo-negro-removebg-preview.png" alt=""></a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
-                        data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar"
-                        aria-label="Toggle navigation">
-                        <i class="bi bi-chevron-double-right text-white"></i>
-                    </button>
-                    <div class="offcanvas offcanvas-end bg-dark" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                        <div class="offcanvas-header">
-                            <h5 class="offcanvas-title text-white" id="offcanvasNavbarLabel">S&S FERMENTADOS</h5>
-                            <a data-bs-dismiss="offcanvas" aria-label="Close"><i class="bi bi-x-square-fill text-white fs-5"></i></a>
+    <div id="app">
+        <header class="d-flex flex-column">
+            <div class="header-arriba">
+                <h5 class="text-center text-white p-1 mb-0 bg-header">Tómatela como un oso fella</h5>
+            </div>
+            <div class="header-abajo">
+                <nav class="navbar navbar-expand-lg">
+                    <div class="container-fluid">
+                        <a class="navbar-brand ps-5" href="#"><img src="./imagenes/logo-negro-removebg-preview.png"
+                                alt=""></a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar"
+                            aria-label="Toggle navigation">
+                            <i class="bi bi-chevron-double-right text-white"></i>
+                        </button>
+                        <div class="offcanvas offcanvas-end bg-dark" tabindex="-1" id="offcanvasNavbar"
+                            aria-labelledby="offcanvasNavbarLabel">
+                            <div class="offcanvas-header">
+                                <h5 class="offcanvas-title text-white" id="offcanvasNavbarLabel">S&S FERMENTADOS</h5>
+                                <a data-bs-dismiss="offcanvas" aria-label="Close"><i
+                                        class="bi bi-x-square-fill text-white fs-5"></i></a>
+                            </div>
+                            <div class="offcanvas-body">
+                                <ul class="navbar-nav nav-underline ms-auto me-auto mb-2 mb-lg-0 gap-3">
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle text-white fs-5" href="#" role="button"
+                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                            Categorias
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="#">Vinos</a></li>
+                                            <li><a class="dropdown-item" href="#">Macerados</a></li>
+                                            <li><a class="dropdown-item" href="#">Cervezas</a></li>
+                                            <li>
+                                                <hr class="dropdown-divider">
+                                            </li>
+                                            <li><a class="dropdown-item" href="#">Licores mensuales</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle text-white fs-5" href="#" role="button"
+                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                            Páginas
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="#">Sobre Nosotros</a></li>
+                                            <li><a class="dropdown-item" href="#">Preguntas Frecuentes</a></li>
+                                            <li><a class="dropdown-item" href="#">Políticas de Privacidad</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-white fs-5" aria-current="page" href="#">Contáctanos</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-white fs-5" aria-current="page" href="#">Blog</a>
+                                    </li>
+                                </ul>
+                                <ul class="d-flex align-items-center mb-2 mb-lg-0 ps-0 gap-3">
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle text-white fs-5" href="#" role="button"
+                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                            Mi cuenta
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                                    data-bs-target="#ModalForm">Log In</a></li>
+                                            <li><a class="dropdown-item" href="#">Favoritos</a></li>
+                                            <li><a class="dropdown-item" href="#">Mis pedidos</a></li>
+                                            <li><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-white fs-5" aria-current="page" href="#">|</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-white fs-5" aria-current="page" href="#"><i
+                                                class="bi bi-search-heart"></i></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-white fs-5" aria-current="page" href="#"><i
+                                                class="bi bi-basket2"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="offcanvas-body">
-                            <ul class="navbar-nav nav-underline ms-auto me-auto mb-2 mb-lg-0 gap-3">
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle text-white fs-5" href="#" role="button"
-                                        data-bs-toggle="dropdown" aria-expanded="false">
-                                        Categorias
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">Vinos</a></li>
-                                        <li><a class="dropdown-item" href="#">Macerados</a></li>
-                                        <li><a class="dropdown-item" href="#">Cervezas</a></li>
-                                        <li>
-                                            <hr class="dropdown-divider">
-                                        </li>
-                                        <li><a class="dropdown-item" href="#">Licores mensuales</a></li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle text-white fs-5" href="#" role="button" data-bs-toggle="dropdown"
-                                        aria-expanded="false">
-                                        Páginas
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">Sobre Nosotros</a></li>
-                                        <li><a class="dropdown-item" href="#">Preguntas Frecuentes</a></li>
-                                        <li><a class="dropdown-item" href="#">Políticas de Privacidad</a></li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link text-white fs-5" aria-current="page" href="#">Contáctanos</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link text-white fs-5" aria-current="page" href="#">Blog</a>
-                                </li>
-                            </ul>                       
-                            <ul class="d-flex align-items-center mb-2 mb-lg-0 ps-0 gap-3">
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle text-white fs-5" href="#" role="button" data-bs-toggle="dropdown"
-                                        aria-expanded="false">
-                                        Mi cuenta
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">Log In</a></li>
-                                        <li><a class="dropdown-item" href="#">Favoritos</a></li>
-                                        <li><a class="dropdown-item" href="#">Mis pedidos</a></li>
-                                        <li><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link text-white fs-5" aria-current="page" href="#">|</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link text-white fs-5" aria-current="page" href="#"><i class="bi bi-search-heart"></i></a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link text-white fs-5" aria-current="page" href="#"><i class="bi bi-basket2"></i></a>
-                                </li>
-                            </ul>
-                        </div>                      
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <div class="productos">
+
+            </div>
+            <div class="imagen-estatica d-flex flex-column align-items-center">
+                <h3 class="text-center text-white pt-5 pb-5">Licores Artesanales</h3>
+                <h1 class="text-center text-white pb-5">S&S FERMENTADOS</h1>
+                <a href="" class="btn btn-success mb-5">Compra Ahora</a>
+            </div>
+            <div
+                class="informacion-iconos d-flex flex-column flex-md-row justify-content-evenly align-items-center gap-3">
+                <div class="d-flex flex-column justify-content-center align-items-center">
+                    <i class="bi bi-chat-square-heart text-danger"></i>
+                    <h4>Productos con Amor</h4>
+                    <p class="text-center">Dedicamos nuestro tiempo, para darte licores de buena calidad y sabores
+                        únicos.</p>
+                </div>
+                <div class="d-flex flex-column justify-content-center align-items-center">
+                    <i class="bi bi-shop text-info"></i>
+                    <h4>Tienda local</h4>
+                    <p class="text-center">No subicamos en el municipio de copacabana, Antioquia.</p>
+                </div>
+                <div class="d-flex flex-column justify-content-center align-items-center">
+                    <i class="bi bi-gift text-success"></i>
+                    <h4>Regalo de Cumpleaños</h4>
+                    <p class="text-center">Te damos un descuento en tu mes de cumpleaños.</p>
+                </div>
+            </div>
+
+        </main>
+        <!-- MODAL ingresar -->
+        <div class="modal fade" id="ModalForm" ref="modal-login" tabindex="-1" aria-labelledby="ModalFormLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                        <div class="container">
+                            <input type="checkbox" id="check" />
+                            <div class="login form">
+                                <header>Ingresar</header>
+                                <form @submit.prevent="ingresar">
+                                    <input type="text" placeholder="Nombre de usuario"
+                                        v-model="nickName" />
+                                    <div class="inputBox">
+                                        <input type="password" placeholder="Ingresa tu contraseña" v-model="contraseña"
+                                            name="contraseña" />
+                                        <i class="fa-regular fa-eye-slash pw-hide"></i>
+                                    </div>
+                                    <a href="#">¿Has olvidado tu contraseña?</a>
+                                    <input type="submit" class="button" value="Acceder" />
+                                </form>
+                                <div class="signup">
+                                    <span class="signup">¿No tienes una cuenta?
+                                        <label for="check" >Registrate</label>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="registration form">
+                                <header>Registrate</header>
+                                <form @submit.prevent="register">
+                                    <div class="d-flex gap-1">
+                                        <input type="text" placeholder="Nombre" required v-model="nombre" />
+                                        <input type="text" placeholder="Apellido" v-model="apellido" />
+                                    </div>
+                                    <input type="tel" placeholder="Introduce tu numero de contacto" required
+                                        v-model="telefono" />
+                                    <input type="text" placeholder="Introduce tu nickName" required
+                                    v-model="nickNameRegistro" />
+                                    <input type="text" placeholder="Introduce tu correo electrónico" required
+                                        v-model="correoRegistro" />
+                                    <div class="inputBox">
+                                        <input type="password" placeholder="Crear una contraseña" required
+                                            v-model="contraseñaRegistro" name="contraseña" />
+                                        <i class="fa-regular fa-eye-slash pw-hide"></i>
+                                    </div>
+                                    <input type="submit" class="button" value="Registrate" />
+                                </form>
+                                <div class="signup">
+                                    <span class="signup">¿Ya tienes una cuenta?
+                                        <label for="check">Ingresa</label>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </nav>
-        </div>
-    </header>
-    <main>
-        <div class="productos">
-            
-        </div>
-        <div class="imagen-estatica d-flex flex-column align-items-center">
-            <h3 class="text-center text-white pt-5 pb-5">Licores Artesanales</h3>
-            <h1 class="text-center text-white pb-5">S&S FERMENTADOS</h1>
-            <a href="" class="btn btn-success mb-5">Compra Ahora</a>
-        </div>
-        <div class="informacion-iconos d-flex flex-column flex-md-row justify-content-evenly align-items-center gap-3">
-            <div class="d-flex flex-column justify-content-center align-items-center">
-                <i class="bi bi-chat-square-heart text-danger"></i>
-                <h4>Productos con Amor</h4>
-                <p class="text-center">Dedicamos nuestro tiempo, para darte licores de buena calidad y sabores únicos.</p>
-            </div>
-            <div class="d-flex flex-column justify-content-center align-items-center">
-                <i class="bi bi-shop text-info"></i>
-                <h4>Tienda local</h4>
-                <p class="text-center">No subicamos en el municipio de copacabana, Antioquia.</p>
-            </div>
-            <div class="d-flex flex-column justify-content-center align-items-center">
-                <i class="bi bi-gift text-success"></i>
-                <h4>Regalo de Cumpleaños</h4>
-                <p class="text-center">Te damos un descuento en tu mes de cumpleaños.</p>
             </div>
         </div>
-
+    </div>
     </main>
     <footer class="d-flex flex-column flex-md-row justify-content-evenly bg-dark">
         <div class="imagen-footer d-flex flex-column align-items-start justify-content-center">
@@ -158,11 +233,13 @@
         </div>
     </footer>
 
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
-    crossorigin="anonymous"></script>
+        integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="./web/js/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>

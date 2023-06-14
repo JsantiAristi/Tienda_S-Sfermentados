@@ -15,7 +15,7 @@ public class ProductoControlador {
     @Autowired
     ProductoRepositorio productoRepositorio;
 
-    @GetMapping("api/producto")
+    @GetMapping("/api/producto")
     public List<ProductoDTO> obtenerProductos(){
         return productoRepositorio.findAll().stream().map( ProductoDTO::new ).collect(toList());
     }
