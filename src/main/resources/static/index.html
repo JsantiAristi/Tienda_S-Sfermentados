@@ -147,7 +147,6 @@
                             aria-label="Close"></button>
                         <div class="container">
                             <input type="checkbox" id="check" />
-
                             <div class="login form">
                                 <header>Ingresar</header>
                                 <form @submit.prevent="ingresar">
@@ -200,7 +199,39 @@
             </div>
         </div>
     </div>
-
+    </main>
+    <footer class="d-flex flex-column flex-md-row justify-content-evenly bg-dark">
+        <div class="imagen-footer d-flex flex-column align-items-start justify-content-center">
+            <figure>
+                <img src="./imagenes/logo-negro-removebg-preview.png" alt="">
+            </figure>
+            <p class="text-white">There are many variations of passages of Lorem Ipsum available but the dum majority have in suffered alteration</p>
+            <p class="text-white">Llamanos: 318 6066 227 </p>
+            <p class="text-white">Correo: s&sfermentados@gmail.com</p>
+            <div class="me-auto ms-auto gap-3">
+                <i class="bi bi-instagram text-white me-3"></i>
+                <i class="bi bi-whatsapp text-white"></i>
+            </div>
+        </div>
+        <div class="informacion-compañia text-white">
+            <h2 class="pt-5 pb-4">Compañia</h2>
+            <p>Sobre Nosotros</p>
+            <p>Contáctanos</p>
+            <p>Política de privacidad</p>
+            <p>Blog</p>
+        </div>
+        <div class="informacion-compañia text-white">
+            <h2 class="pt-5 pb-4">Sobre la cuenta</h2>
+            <p>Mi cuenta</p>
+            <p>Mis órdenes</p>
+            <p>Mi perfil</p>
+        </div>
+        <div class="informacion-contacto text-white">
+            <h2 class="pt-4 pb-4">Escríbenos</h2>
+            <p>Registrate para recibir promociones o nueva información</p>
+            <button class="btn btn-success">Registrar</button>
+        </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
