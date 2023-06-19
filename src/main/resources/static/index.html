@@ -83,10 +83,10 @@
                                         </a>
                                         <ul class="dropdown-menu">
                                             <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
-                                                    data-bs-target="#ModalForm">Log In</a></li>
+                                                    data-bs-target="#ModalForm">Iniciar Sesión</a></li>
                                             <li><a class="dropdown-item" href="#">Favoritos</a></li>
                                             <li><a class="dropdown-item" href="#">Mis pedidos</a></li>
-                                            <li><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
+                                            <li><a class="dropdown-item" @click="salir" href="#">Cerrar Sesión</a></li>
                                         </ul>
                                     </li>
                                     <li class="nav-item">
@@ -142,9 +142,7 @@
             aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
-                    <div class="modal-body">
-                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
-                            aria-label="Close"></button>
+                    <div class="modal-body p-0">
                         <div class="container">
                             <input type="checkbox" id="check" />
                             <div class="login form">
@@ -157,7 +155,7 @@
                                             name="contraseña" />
                                         <i class="fa-regular fa-eye-slash pw-hide"></i>
                                     </div>
-                                    <a href="#">¿Has olvidado tu contraseña?</a>
+                                    <a href="#" class="olvidar-contraseña">¿Has olvidado tu contraseña?</a>
                                     <input type="submit" class="button" value="Acceder" />
                                 </form>
                                 <div class="signup">
