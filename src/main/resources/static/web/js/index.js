@@ -86,7 +86,6 @@ createApp({
 					Swal.fire({
 						icon: 'error',
 						text: error.response.data,
-						confirmButtonColor: '#7c601893',
 					})
 				);
 		},
@@ -110,7 +109,6 @@ createApp({
 							Swal.fire({
 								icon: 'error',
 								text: error.response.data,
-								confirmButtonColor: '#7c601893',
 							})
 						);
 				},
