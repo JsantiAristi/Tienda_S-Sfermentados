@@ -3,6 +3,7 @@ const {createApp} = Vue;
 createApp({
 	data() {
 		return {
+			rol:'',
 			nickName:'',
 			contraseña: '',
 			nombre:'',
@@ -11,11 +12,15 @@ createApp({
             nickNameRegistro :'',
             correoRegistro:'',
             contraseñaRegistro:'',
+			clienteIngresado:'',
 			
 		};
 	},
 	created() {
 		this.data();
+	},
+	mounted() {
+		this.roles();
 	},
 	methods: {
 		
@@ -24,9 +29,21 @@ createApp({
 				.get('/api/clientes/actual')
 				.then(response => {
                     this.datos = response.data;
+					this.clienteIngresado = response.data;
                     console.log(this.datos)
 				})
 				.catch(error => console.log(error));
+		},
+		roles() {
+			axios
+				.get('/api/clientes/rol')
+				.then(response => {
+					this.rol = response.data;
+					console.log(this.rol)
+				})
+				.catch(error => {
+					console.log(error);
+				});
 		},
 		ingresar() {
 			axios

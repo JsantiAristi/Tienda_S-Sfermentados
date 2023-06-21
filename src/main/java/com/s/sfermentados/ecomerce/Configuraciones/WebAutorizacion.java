@@ -26,7 +26,9 @@ public class WebAutorizacion  {
                 // HTML JS CSS PERMIT ALL
                 .antMatchers("/api/producto",
                         "/api/clientes",
-                       "/static/**", "/api/clientes/actual").permitAll();
+                       "/static/**",
+                        "/api/clientes/actual",
+                        "/api/clientes/rol").permitAll();
 
 
 
