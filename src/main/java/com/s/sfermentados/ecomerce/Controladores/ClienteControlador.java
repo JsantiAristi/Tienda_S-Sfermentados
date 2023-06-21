@@ -11,7 +11,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
-import javax.mail.MessagingException;
+import java.util.Arrays;
 import java.util.List;
 import java.util.regex.Pattern;
 
@@ -31,9 +31,30 @@ public class ClienteControlador {
         return clienteRepositorio.findAll().stream().map(ClienteDTO::new).collect(toList());
     }
     @GetMapping("/api/clientes/actual")
-    public  ResponseEntity<Object> obtenerClienteActual(Authentication authentication){
-        Cliente clienteAutenticado = clienteServicio.obtenerClienteAutenticado(authentication);
-        return new ResponseEntity<>(new ClienteDTO(clienteAutenticado), HttpStatus.ACCEPTED);
+    public ResponseEntity<?> obtenerClienteActual(Authentication authentication) {
+        if (authentication == null || !authentication.isAuthenticated()) {
+            // El usuario no está autenticado
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).body("Acceso no autorizado");
+        }
+
+        // Verificar el rol del usuario
+        List<String> rolesPermitidos = Arrays.asList("CLIENTE", "ADMIN");
+        boolean hasAccess = authentication.getAuthorities().stream()
+                .anyMatch(auth -> rolesPermitidos.contains(auth.getAuthority()));
+        if (hasAccess) {
+            Cliente clienteAutenticado = clienteServicio.obtenerClienteAutenticado(authentication);
+            return ResponseEntity.ok(new ClienteDTO(clienteAutenticado));
+        } else {
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).body("Acceso no autorizado");
+        }
+    }
+
+    @GetMapping("/api/clientes/rol")
+    public String getClientRol(Authentication authentication){
+        if(authentication != null){
+            return clienteServicio.obtenerRolCliente(authentication).toString();
+        }
+        return "VISITANTE";
     }
 
     @PostMapping("/api/clientes")

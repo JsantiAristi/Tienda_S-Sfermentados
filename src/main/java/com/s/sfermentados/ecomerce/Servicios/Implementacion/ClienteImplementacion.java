@@ -6,10 +6,13 @@ import com.s.sfermentados.ecomerce.Repositorios.ClienteRepositorio;
 import com.s.sfermentados.ecomerce.Servicios.ClienteServicio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
+
+import static java.util.stream.Collectors.toList;
 
 @Service
 public class ClienteImplementacion implements ClienteServicio {
@@ -40,5 +43,15 @@ public class ClienteImplementacion implements ClienteServicio {
     @Override
     public void guardarCliente(Cliente cliente) {
         clienteRepositorio.save(cliente);
+    }
+    @Override
+    public boolean isAdmin(Authentication authentication) {
+        return authentication.getAuthorities()
+                .stream()
+                .anyMatch(role -> role.getAuthority().equals("ADMIN"));
+    }
+    @Override
+    public GrantedAuthority obtenerRolCliente(Authentication authentication) {
+        return authentication.getAuthorities().stream().collect(toList()).get(0);
     }
 }

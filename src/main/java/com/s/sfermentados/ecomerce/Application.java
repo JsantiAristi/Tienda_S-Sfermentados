@@ -26,6 +26,9 @@ public class Application {
 			Cliente cliente1 = new Cliente("Carlos","Ruiz","Suaha","carlosandresgoo@gmail.com","322-567-8909",passwordEncoder.encode("123"));
 			clienteRepositorio.save(cliente1);
 
+			Cliente cliente2 = new Cliente("Santiago","Aristizabal","Admin@","admin@gmail.com","311-890-2023",passwordEncoder.encode("123"));
+			clienteRepositorio.save(cliente2);
+
 			Producto vino_tinto_dulce = new Producto( 1, 20000, "https://res.cloudinary.com/dtis6pqyq/image/upload/v1686411712/kg7farm9plunaghqjraq.jpg" , 14, "Dulce", 750, "Vino de uva Isabela con característico olor frutal, tiene un toque seco y un brillante color Burdeos.", "Vino Tinto" );
 			productoRepositorio.save(vino_tinto_dulce);
 		};
